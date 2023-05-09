@@ -10,3 +10,4 @@ logs
 **/*.back.*
 
 node_modules
+design
