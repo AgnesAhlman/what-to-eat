@@ -11,11 +11,14 @@ datasource db {
 }
 
 model User {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  userId   String   @db.ObjectId
-  name     String   @unique
-  password String
-  recipes  Recipe[]
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  name      String   @unique
+  password  String
+  recipes   Recipe[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  deletedAt DateTime @default(now())
 }
 
 model Recipe {
