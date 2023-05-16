@@ -19,11 +19,14 @@ model User {
 }
 
 model Recipe {
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   name        String
-  ingridients String
+  ingridients String[]
   description String
   img         String?
-  User        User?   @relation(fields: [userId], references: [id])
-  userId      String? @db.ObjectId
+  User        User?    @relation(fields: [userId], references: [id])
+  userId      String?  @db.ObjectId
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+  deletedAt   DateTime @default(now())
 }
