@@ -1,0 +1,24 @@
+.gridParent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.gridCell {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.likeBtn {
+  background-color: transparent;
+  border: none;
+}
+
+/*** DESKTOP ***/
+@media only screen and (min-width: 768px) {
+  .gridParent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

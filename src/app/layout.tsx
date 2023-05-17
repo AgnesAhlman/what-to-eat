@@ -1,3 +1,4 @@
+import Wrapper from "@/components/wrapper/Wrapper";
 import Provider from "../components/Provider";
 import "./globals.css";
 
@@ -16,7 +17,9 @@ export default function RootLayout({
       <body>
         <Provider>
           <nav>Nav</nav>
-          <main>{children}</main>
+          <main className="container">
+            <Wrapper>{children}</Wrapper>
+          </main>
         </Provider>
       </body>
     </html>
