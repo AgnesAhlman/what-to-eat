@@ -4,9 +4,9 @@ import { prisma } from ".";
 export async function createRecipe() {
   const recipe = await prisma.recipe.create({
     data: {
-      name: "Fish-tacos",
-      ingridients: "Rotselleri",
-      description: "Delicious fish tacos with Rotselleri",
+      name: "Tomtatsoppa",
+      ingridients: "tomat",
+      description: "Krämig och god tomatsoppa!",
     },
   });
   console.log("Recipe created successfully!");
@@ -14,8 +14,3 @@ export async function createRecipe() {
 }
 
 // TODO: create get
-
-export async function GET(request: Request) {
-  const recipes = await prisma.recipe.findMany();
-  return NextResponse.json(recipes);
-}
