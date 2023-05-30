@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Wrapper from "@/components/wrapper/Wrapper";
 import AllRecipes from "@/components/allRecipes/AllRecipes";
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
       />
 
       <Link href="/login"> Go to log in </Link>
-
+      {/* @ts-expect-error Async Server Component */}
       <AllRecipes />
     </>
   );

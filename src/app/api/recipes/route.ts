@@ -1,5 +1,5 @@
-import { prisma } from "@/db";
-import { createRecipe } from "@/db/recipe";
+import { createRecipe, getRecipes } from "@/db/recipe";
+import { Recipe } from "@prisma/client";
 import { NextResponse } from "next/server";
 
 export const POST = async () => {
@@ -10,6 +10,6 @@ export const POST = async () => {
 };
 
 export async function GET(request: Request) {
-  const recipes = await prisma.recipe.findMany();
+  const recipes = await getRecipes();
   return NextResponse.json(recipes);
 }
