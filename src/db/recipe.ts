@@ -3,16 +3,22 @@ import { prisma } from ".";
 import { notFound } from "next/navigation";
 import { Recipe } from "@prisma/client";
 
-export async function createRecipe() {
-  const recipe = await prisma.recipe.create({
-    data: {
-      name: "Tomtatsoppa",
-      ingridients: "tomat",
-      description: "Krämig och god tomatsoppa!",
-    },
-  });
-  console.log("Recipe created successfully!");
-  return recipe;
+export async function createRecipe(data: Recipe): Promise<Recipe> {
+  try {
+    const now = new Date();
+    const recipe = await prisma.recipe.create({
+      data: {
+        ...data,
+        createdAt: now,
+        updatedAt: now,
+      },
+    });
+    console.log("Recipe created successfully!");
+    return recipe;
+  } catch (error) {
+    console.error("Error creating recipe:", error);
+    throw error;
+  }
 }
 
 export async function getRecipes() {

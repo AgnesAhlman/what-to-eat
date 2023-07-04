@@ -13,7 +13,7 @@ export default async function SingleRecipe(props: SingleRecipeProps) {
     <section>
       <h1>Single Recipe</h1>
       <p>{recipe.name}</p>
-      <p>{recipe.ingridients}</p>
+      <p>{recipe.ingredients}</p>
       <p>{recipe.description}</p>
     </section>
   );

@@ -7,8 +7,8 @@ export default function Home() {
     <>
       <Image
         src="/logo-big.png"
-        width={400}
-        height={400}
+        width={300}
+        height={300}
         alt="Picture of the logo"
       />
 
