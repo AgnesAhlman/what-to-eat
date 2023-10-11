@@ -1,6 +1,7 @@
 ### NextJS ###
 # Next build dir
 .next/
+.env.local
 
 ### react ###
 .DS_*
